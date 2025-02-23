@@ -24,6 +24,7 @@
     padding: 20px;
     text-align: center;
     background-color: #4a69bd; /* soft blue background for the search area */
+    overflow-x: auto;
   }
 
   /* styling for the main table */
