@@ -57,24 +57,6 @@
     user-select: none; /* prevent text selection on double-click */
   }
 
-  /* adding a sort indicator arrow to header cells */
-  thead th::after {
-    content: '';
-    position: absolute;
-    right: 20px;
-    border: 6px solid transparent; /* create an arrow using borders */
-    border-top-color: #fff; /* white arrow pointing upwards */
-    transform: translateY(-50%);
-    top: 50%;
-    opacity: 0; /* hide the arrow by default */
-    transition: opacity 0.2s ease; /* smooth transition for arrow visibility */
-  }
-
-  /* show the sort indicator arrow on header hover */
-  thead th:hover::after {
-    opacity: 1; /* make the arrow visible on hover */
-  }
-
   /* styling for table rows */
   tbody tr {
     transition: background-color 0.3s ease; /* smooth transition for hover effect */
