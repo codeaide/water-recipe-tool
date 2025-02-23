@@ -13,6 +13,53 @@
     </head>
 
     <body>
+        <!-- main container -->
+        <div class="main-container">
+            <h1>Water Recipe Tool</h1>
+            <p>Coffee water recipe tool.</p>
+
+            <div id="table">
+                <!-- table displaying information about concentrates -->
+                <table id="concentrateTable">
+                    <!-- table header containing column titles -->
+                    <thead>
+                        <tr>
+                            <th>Compound Name</th>
+                            <th>Molar Mass</th>
+                            <th>Quantity (g)</th>
+                            <th>Volume (ml)</th>
+                            <th>Overall Strength (mmol/l)</th>
+                            <th>Mix Volume (ml)</th>
+                        </tr>
+                    </thead>
+                    <!-- table body where data rows will be dynamically inserted -->
+                    <tbody>
+                        <!-- table rows are populated by JavaScript -->
+                    </tbody>
+                </table>
+
+                <!-- table displaying information about final mixture -->
+                <table id="mixtureTable">
+                    <!-- table header containing column titles -->
+                    <thead>
+                        <tr>
+                            <th>Total Volume (ml)</th>
+                            <th>General Hardness (mmol/l)</th>
+                            <th>Carbonate Hardness (mmol/l)</th>
+                            <th>GH Alkalinity (mg/l of CaCO3)</th>
+                            <th>KH Alkalinity (mg/l of CaCO3)</th>
+                        </tr>
+                    </thead>
+                    <!-- table body where data rows will be dynamically inserted -->
+                    <tbody>
+                        <!-- table rows are populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <button onclick="exportRecipe()">Export Recipe</button>
+            <p id="export-data"></p>
+        </div>
 
         <!-- link to the external JavaScript file for interactivity -->
         <script src="script.js"></script>

@@ -10,3 +10,157 @@
     font-family: 'Arial', sans-serif;
     background-color: #f0f2f5; /* light gray background for contrast */
   }
+
+  h1 {
+    color: white;
+  }
+
+  p {
+    color: gainsboro;
+  }
+
+  /* styling for the search input container */
+  .main-container {
+    padding: 20px;
+    text-align: center;
+    background-color: #4a69bd; /* soft blue background for the search area */
+  }
+
+  /* styling for the main table */
+  table {
+    width: 80%; /* table width relative to the viewport */
+    margin: 30px auto; /* center the table horizontally */
+    border-collapse: collapse; /* remove default spacing between cells */
+    overflow: hidden;
+    border-radius: 10px; /* rounded corners for the table */
+    background-color: #fff; /* white background for table content */
+  }
+
+  /* styling for the table header */
+  table#concentrateTable thead {
+    background-color: #1e3799; /* dark blue background for header */
+    color: #fff; /* white text for contrast */
+  }
+
+  /* styling for the table header */
+  table#mixtureTable thead {
+    background-color: #1e9999; /* dark blue background for header */
+    color: #fff; /* white text for contrast */
+  }
+
+  /* styling for header cells */
+  thead th {
+    padding: 15px;
+    cursor: pointer; /* indicate that the header is clickable */
+    position: relative;
+    user-select: none; /* prevent text selection on double-click */
+  }
+
+  /* adding a sort indicator arrow to header cells */
+  thead th::after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    border: 6px solid transparent; /* create an arrow using borders */
+    border-top-color: #fff; /* white arrow pointing upwards */
+    transform: translateY(-50%);
+    top: 50%;
+    opacity: 0; /* hide the arrow by default */
+    transition: opacity 0.2s ease; /* smooth transition for arrow visibility */
+  }
+
+  /* show the sort indicator arrow on header hover */
+  thead th:hover::after {
+    opacity: 1; /* make the arrow visible on hover */
+  }
+
+  /* styling for table rows */
+  tbody tr {
+    transition: background-color 0.3s ease; /* smooth transition for hover effect */
+  }
+
+  /* alternate row background color for better readability */
+  tbody tr:nth-child(even) {
+    background-color: #f1f2f6; /* light gray for even rows */
+  }
+
+  /* hover effect for table rows */
+  tbody tr:hover {
+    background-color: #dcdde1; /* slightly darker gray on hover */
+  }
+
+  /* styling for table data cells */
+  td {
+    padding: 15px;
+    text-align: center; /* center-align text within cells */
+  }
+
+  input[type=number] {
+    text-align: right;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=number]:focus {
+    border: 1px solid #555;
+  }
+
+  /* spin buttons modified */
+  input[type="number"]::-webkit-outer-spin-button, 
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: inner-spin-button !important;
+    opacity: 1 !important;
+    width: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-color: blue !important;
+    border: 2.5px solid red !important;
+  }
+
+  output[type=number] {
+    text-align: right;
+  }
+
+  /* keyframe animation for row fade-in effect */
+  @keyframes fadeIn {
+    from {
+        opacity: 0; /* start with invisible rows */
+        transform: translateY(10px); /* slightly shifted down */
+    }
+    to {
+        opacity: 1; /* fully visible */
+        transform: translateY(0); /* original position */
+    }
+  }
+
+  /* apply the fade-in animation to table rows */
+  tbody tr {
+    animation: fadeIn 0.5s ease-in;
+  }
+
+  select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    width: 35vh;
+    text-align: center;
+  }
+
+  select:hover {
+    background-color: #e0e0e0;
+  }
+
+  select:focus {
+    border-color: #214974;
+    box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
+  }
