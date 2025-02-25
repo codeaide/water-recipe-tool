@@ -5,10 +5,12 @@
     <head>
         <!-- character encoding for the HTML document -->
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <!-- title displayed on the browser tab -->
         <title>Water Recipe Calculator</title>
-        <!-- link to the external CSS file for styling -->
+        <!-- link to the bootstrap CSS for responsive styling -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+        <!-- link to the external CSS for styling -->
         <link rel="stylesheet" href="styles.css">
     </head>
 
@@ -18,9 +20,9 @@
             <h1>Water Recipe Tool</h1>
             <p>Coffee water recipe tool.</p>
 
-            <div id="table">
+            <div id="table" class="table-responsive">
                 <!-- table displaying information about concentrates -->
-                <table id="concentrateTable">
+                <table id="concentrateTable" class="table">
                     <!-- table header containing column titles -->
                     <thead>
                         <tr>
@@ -39,7 +41,7 @@
                 </table>
 
                 <!-- table displaying information about final mixture -->
-                <table id="mixtureTable">
+                <table id="mixtureTable" class="table">
                     <!-- table header containing column titles -->
                     <thead>
                         <tr>
@@ -61,7 +63,9 @@
             <p id="export-data"></p>
         </div>
 
-        <!-- link to the external JavaScript file for interactivity -->
+        <!-- link to bootstrap script for responsive actions -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- link to external script for interactions -->
         <script src="script.js"></script>
     </body>
 </html>
