@@ -33,7 +33,14 @@
                         </tr>
                         <tr>
                             <th title="Volume of distlled water used to make final mixture">Volume</th>
-                            <td><input id="wrtMixtureVolumeInput" type="number" min="0.0" max="9999.0" step="1.0" value="2000.0"></td>
+                            <td>
+                                <input id="wrtMixtureVolumeInput" type="number" min="0.0" max="9999.0" step="1.0" value="2000.0">
+                                <select id="wrtMixtureVolumeUnit">
+                                    <!-- options with value containing the multiplication factor for input -->
+                                    <option value="1.0">Milliliters</option>
+                                    <option value="3785.411784">Gallons</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
                             <th title="General hardness of the final mixture">General Hardness (mmol/l)</th>

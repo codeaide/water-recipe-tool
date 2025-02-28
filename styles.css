@@ -213,6 +213,29 @@
     text-align: left;
   }
 
+  /* styling for combo-box */
+  select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    text-align: left;
+  }
+
+  /* hover effect for combo-box */
+  select:hover {
+    background-color: #e0e0e0;
+  }
+
+  /* styling for combo-box when focused */
+  select:focus {
+    border-color: #214974;
+    box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
+  }
+
   button#wrtExportButton {
     border: none;
     color: black;

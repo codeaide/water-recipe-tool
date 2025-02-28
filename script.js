@@ -125,6 +125,12 @@ function recipeChanged(strengthChanged) {
         finalVolume = 0.0;
     }
 
+    // get the selected unit
+    const unitSelect = document.querySelector('select#wrtMixtureVolumeUnit');
+
+    // use the factor to get the real volume
+    finalVolume = finalVolume * parseFloat(unitSelect.value);
+
     // declare variables to calculate strengths of all concentrates
     let ghStrengthConcentrates = 0.0;
     let khStrengthConcentrates = 0.0;
