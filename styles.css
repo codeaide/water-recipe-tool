@@ -8,92 +8,194 @@
   /* body styling for font and background */
   body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f2f5; /* light gray background for contrast */
+    /* light gray background for contrast */
+    background-color: #f0f2f5;
   }
 
+  /* add spacing between containers */
+  div {
+    margin-bottom: 30px;
+  }
+
+  /* styling for main container */
+  div#wrtMainContainer {
+    padding: 20px;
+    text-align: center;
+    background-color: #5C84A3;
+    overflow-x: auto;
+  }
+
+  /* styling for header */
   h1 {
     color: white;
   }
 
+  /* styling for paragraph */
   p {
-    color: gainsboro;
+    color: white;
+    margin-bottom: 30px;
   }
 
-  /* styling for the search input container */
-  .main-container {
-    padding: 20px;
-    text-align: center;
-    background-color: #4a69bd; /* soft blue background for the search area */
-    overflow-x: auto;
-  }
-
-  /* styling for the main table */
+  /* styling for tables */
   table {
-    width: 80%; /* table width relative to the viewport */
-    margin: 30px auto; /* center the table horizontally */
-    border-collapse: collapse; /* remove default spacing between cells */
+    /* table width relative to the viewport */
+    width: 100%;
+    /* remove default spacing between cells */
+    border-collapse: collapse;
     overflow: hidden;
-    border-radius: 10px; /* rounded corners for the table */
-    background-color: #fff; /* white background for table content */
+    /* smooth rounded corners for the table */
+    border-radius: 10px;
+    /* white background for table content */
+    background-color: #fff;
   }
 
-  /* styling for the table header */
-  table#concentrateTable thead {
-    background-color: #1e3799; /* dark blue background for header */
-    color: #fff; /* white text for contrast */
-  }
-
-  /* styling for the table header */
-  table#mixtureTable thead {
-    background-color: #1e9999; /* dark blue background for header */
-    color: #fff; /* white text for contrast */
-  }
-
-  /* styling for header cells */
-  thead th {
+  /* styling for table headers */
+  tbody th {
     padding: 15px;
-    cursor: pointer; /* indicate that the header is clickable */
     position: relative;
-    user-select: none; /* prevent text selection on double-click */
+    /* prevent text selection on double-click */
+    user-select: none;
+    /* center-align text within cells */
+    text-align: left;
   }
 
   /* styling for table rows */
   tbody tr {
-    transition: background-color 0.3s ease; /* smooth transition for hover effect */
+    /* smooth transition for hover effect */
+    transition: background-color 0.3s ease;
   }
 
   /* alternate row background color for better readability */
   tbody tr:nth-child(even) {
-    background-color: #f1f2f6; /* light gray for even rows */
+    /* light gray for even rows */
+    background-color: #f1f2f6;
   }
 
   /* hover effect for table rows */
   tbody tr:hover {
-    background-color: #dcdde1; /* slightly darker gray on hover */
+    /* slightly darker gray on hover */
+    background-color: #dcdde1;
   }
 
   /* styling for table data cells */
   td {
     padding: 15px;
-    text-align: center; /* center-align text within cells */
+    /* center-align text within cells */
+    text-align: left;
   }
 
+  /* styling for buttons */
+  button {
+    /* bold text */
+    font-weight: bold;
+  }
+
+  /* style the button that is used to open and close the collapsible content */
+  .wrtCollapseButtonClass {
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 80%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    /* rounded corners for the table */
+    border-radius: 10px;
+  }
+
+  .wrtCollapseButtonClass:after {
+    /* unicode character for "plus" sign (+) */
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+
+  /* style the button that is used to open and close the collapsible content */
+  .wrtCollapseButtonClass.wrtGHConcentrateButtonClass {
+    background-color: #79467D;
+  }
+
+  /* add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .wrtCollapseButtonClass.wrtGHConcentrateButtonClass:hover {
+    background-color: #9F5CA3;
+  }
+
+  /* style the button that is used to open and close the collapsible content */
+  .wrtCollapseButtonClass.wrtKHConcentrateButtonClass {
+    background-color: #7D5E46;
+  }
+
+  /* add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .wrtCollapseButtonClass.wrtKHConcentrateButtonClass:hover {
+    background-color: #A37B5C;
+  }
+
+  .active:after {
+    /* unicode character for "minus" sign (-) */
+    content: "\2212";
+  }
+
+  /* style the collapsible content. Note: hidden by default */
+  .wrtCollapsibleContentClass {
+    /* table width relative to the viewport */
+    width: 80%;
+    /* center the table horizontally */
+    margin: 0px auto;
+    padding: 18x;
+    /* remove default spacing between cells */
+    border-collapse: collapse;
+    max-height: 0;
+    overflow: hidden;
+    /* rounded corners for the table */
+    border-radius: 10px;
+    transition: max-height 0.2s ease-out;
+    background-color: #fff;
+  }
+
+  /* styling for the table header */
+  .wrtGHConcentrateTableClass th {
+    /* dark blue background for header */
+    background-color: #9F5CA3;
+    /* white text for contrast */
+    color: #fff;
+  }
+
+  /* styling for the table header */
+  .wrtKHConcentrateTableClass th {
+    /* dark blue background for header */
+    background-color: #A37B5C;
+    /* white text for contrast */
+    color: #fff;
+  }
+
+  /* styling for the table header */
+  .wrtMixtureTableClass th {
+    /* dark blue background for header */
+    background-color: #60A35C;
+    /* white text for contrast */
+    color: #fff;
+  }
+
+  /* styling for numeric input elements */
   input[type=number] {
     text-align: left;
     padding: 12px 20px;
-    margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
   }
 
+  /* styling for numeric input element when focused */
   input[type=number]:focus {
     border: 1px solid #555;
   }
 
   /* spin buttons modified */
-  input[type="number"]::-webkit-outer-spin-button, 
+  input[type="number"]::-webkit-outer-spin-button,
   input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: inner-spin-button !important;
     opacity: 1 !important;
@@ -106,11 +208,35 @@
     border: 2.5px solid red !important;
   }
 
-  output[type=number] {
+  /* styling for output elements */
+  output {
     text-align: left;
   }
 
-  button#export-button {
+  /* styling for combo-box */
+  select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    text-align: left;
+  }
+
+  /* hover effect for combo-box */
+  select:hover {
+    background-color: #e0e0e0;
+  }
+
+  /* styling for combo-box when focused */
+  select:focus {
+    border-color: #214974;
+    box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
+  }
+
+  button#wrtExportButton {
     border: none;
     color: black;
     padding: 15px 32px;
@@ -122,7 +248,7 @@
     transition-duration: 0.4s;
   }
 
-  button#export-button:hover {
+  button#wrtExportButton:hover {
     background-color: brown;
     color: white;
   }
@@ -130,37 +256,15 @@
   /* keyframe animation for row fade-in effect */
   @keyframes fadeIn {
     from {
-        opacity: 0; /* start with invisible rows */
-        transform: translateY(10px); /* slightly shifted down */
+        /* start with invisible rows */
+        opacity: 0;
+        /* slightly shifted down */
+        transform: translateY(10px);
     }
     to {
-        opacity: 1; /* fully visible */
-        transform: translateY(0); /* original position */
+        /* fully visible */
+        opacity: 1;
+        /* original position */
+        transform: translateY(0);
     }
-  }
-
-  /* apply the fade-in animation to table rows */
-  tbody tr {
-    animation: fadeIn 0.5s ease-in;
-  }
-
-  select {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #f1f1f1;
-    font-size: 16px;
-    cursor: pointer;
-    outline: none;
-    width: 35vh;
-    text-align: center;
-  }
-
-  select:hover {
-    background-color: #e0e0e0;
-  }
-
-  select:focus {
-    border-color: #214974;
-    box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
   }

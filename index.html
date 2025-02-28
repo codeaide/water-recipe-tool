@@ -8,63 +8,64 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <!-- title displayed on the browser tab -->
         <title>Water Recipe Calculator</title>
-        <!-- link to the bootstrap CSS for responsive styling -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
         <!-- link to the external CSS for styling -->
         <link rel="stylesheet" href="styles.css">
     </head>
 
     <body>
         <!-- main container -->
-        <div class="main-container">
+        <div id="wrtMainContainer">
             <h1>Water Recipe Tool</h1>
-            <p>Coffee water recipe tool.</p>
+            <p>A tool for calculating water hardness to create different recipes for coffee brewing. Enjoy! &#128515;</p>
 
-            <div id="table" class="table-responsive">
-                <!-- table displaying information about concentrates -->
-                <table id="concentrateTable" class="table">
-                    <!-- table header containing column titles -->
-                    <thead>
-                        <tr>
-                            <th>Compound Name</th>
-                            <th>Molar Mass</th>
-                            <th>Quantity (g)</th>
-                            <th>Volume (ml)</th>
-                            <th>Overall Strength (mmol/l)</th>
-                            <th>Mix Volume (ml)</th>
-                        </tr>
-                    </thead>
-                    <!-- table body where data rows will be dynamically inserted -->
-                    <tbody>
-                        <!-- table rows are populated by JavaScript -->
-                    </tbody>
-                </table>
+            <div id="wrtConcentrateContainer">
+                <!-- contents are filled by the script -->
+            </div>
 
+            <div id="wrtMixtureContainer">
                 <!-- table displaying information about final mixture -->
-                <table id="mixtureTable" class="table">
-                    <!-- table header containing column titles -->
-                    <thead>
-                        <tr>
-                            <th>Total Volume (ml)</th>
-                            <th>General Hardness (mmol/l)</th>
-                            <th>Carbonate Hardness (mmol/l)</th>
-                            <th>GH Alkalinity (mg/l of CaCO3)</th>
-                            <th>KH Alkalinity (mg/l of CaCO3)</th>
-                        </tr>
-                    </thead>
+                <table class="wrtCollapsibleContentClass wrtMixtureTableClass">
                     <!-- table body where data rows will be dynamically inserted -->
                     <tbody>
                         <!-- table rows are populated by JavaScript -->
+                        <tr>
+                            <th colspan="2">Final Mixture</th>
+                        </tr>
+                        <tr>
+                            <th title="Volume of distlled water used to make final mixture">Volume</th>
+                            <td>
+                                <input id="wrtMixtureVolumeInput" type="number" min="0.0" max="9999.0" step="1.0" value="2000.0">
+                                <select id="wrtMixtureVolumeUnit">
+                                    <!-- options with value containing the multiplication factor for input -->
+                                    <option value="1.0">Milliliters</option>
+                                    <option value="3785.411784">Gallons</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th title="General hardness of the final mixture">General Hardness (mmol/l)</th>
+                            <td><output id="wrtGhStrengthOutput">0.00</output></td>
+                        </tr>
+                        <tr>
+                            <th title="Carbonate hardness of the final mixture (a.k.a buffer)">Carbonate Hardness (mmol/l)</th>
+                            <td><output id="wrtKhStrengthOutput">0.00</output></td>
+                        </tr>
+                        <tr>
+                            <th title="General hardness expressed as Calcium Carbonate equivalent">General Hardness (mg/l of CaCO3 equiv.)</th>
+                            <td><output id="wrtGhAlkalinityOutput">0.00</output></td>
+                        </tr>
+                        <tr>
+                            <th title="Carbonate hardness expressed as Calcium Carbonate equivalent">Carbonate Hardness (mg/l of CaCO3 equiv.)</th>
+                            <td><output id="wrtKhAlkalinityOutput">0.00</output></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
 
-            <button id="export-button" onclick="exportRecipe()">Export Recipe</button>
-            <p id="export-data"></p>
+            <button id="wrtExportButton" onclick="exportRecipe()">Export Recipe</button>
+            <p id="wrtExportData"></p>
         </div>
 
-        <!-- link to bootstrap script for responsive actions -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
         <!-- link to external script for interactions -->
         <script src="script.js"></script>
     </body>
