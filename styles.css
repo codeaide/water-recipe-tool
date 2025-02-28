@@ -95,7 +95,7 @@
     color: white;
     cursor: pointer;
     padding: 18px;
-    width: 80%;
+    width: 95%;
     border: none;
     text-align: left;
     outline: none;
@@ -141,7 +141,7 @@
   /* style the collapsible content. Note: hidden by default */
   .wrtCollapsibleContentClass {
     /* table width relative to the viewport */
-    width: 80%;
+    width: 95%;
     /* center the table horizontally */
     margin: 0px auto;
     padding: 18x;
