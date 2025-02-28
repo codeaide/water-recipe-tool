@@ -188,6 +188,51 @@ const concentrateList = [
 ];
 
 /**
+ * List of predefined recipes
+ */
+const recipeList = [
+  {
+    name: 'Custom',
+    concentrates: [],
+    finalVolume: 1000.0,
+  },
+  {
+    name: 'Holy Water',
+    concentrates: [
+      { listIndex: 0, compoundQuantity: 0.0, concentrateVolume: 0.0, usedVolume: 0.0, },
+    ],
+    finalVolume: 1000.0,
+  },
+  {
+    name: 'Melbourne Water',
+    concentrates: [],
+    finalVolume: 1000.0,
+  },
+  {
+    name: 'Hendon Water',
+    concentrates: [],
+    finalVolume: 1000.0,
+  },
+  {
+    name: 'Barista Hustle Water #4',
+    concentrates: [],
+    finalVolume: 1000.0,
+  },
+  {
+    name: 'TWW Espresso Inspired',
+    concentrates: [],
+    finalVolume: 1000.0,
+  },
+  {
+    name: 'RPavlis',
+    concentrates: [
+      { listIndex: 2, compoundQuantity: 5.0, concentrateVolume: 500.0, usedVolume: 10.0, },
+    ],
+    finalVolume: 1000.0,
+  },
+];
+
+/**
  * Listener for export action
  */
 function exportRecipe () {
@@ -234,6 +279,23 @@ function exportRecipe () {
   document.body.removeChild(anchorElement);
 
   console.log('Exported recipe');
+}
+
+/**
+ * Listener for changes to preset recipe selection
+ */
+function presetChanged() {
+  // get the select element for drop-down menu
+  const selectElement = document.querySelector('select#wrtRecipeSelect');
+
+  // get the index of preset selected
+  let selectedIndex = selectElement.selectedIndex;
+
+  const selectedPreset = recipeList[selectedIndex];
+
+  console.log('Preset changed to ' + selectedIndex);
+
+  recipeChanged();
 }
 
 /**
@@ -437,6 +499,32 @@ function appendTableRow(tableBody, headerName, headerTooltip, readOnly) {
  * Setup the page by creating required UI elements and listeners
  */
 function setupPage() {
+  // get the select element for drop-down menu
+  const selectElement = document.querySelector('select#wrtRecipeSelect');
+
+  // list index for
+  let listIndex = 0;
+
+  // loop through each concentrate and add the name as option to select
+  recipeList.forEach((recipeItem, listIndex) => {
+    // create an option element for each recipe
+    const selectOptions = document.createElement('option');
+
+    // set the value to the index of the recipe list
+    selectOptions.value = listIndex;
+
+    // set the display text to the name of the recipe
+    selectOptions.textContent = recipeItem.name;
+
+    // add to the select element
+    selectElement.appendChild(selectOptions);
+
+    // increment the list index
+    listIndex++;
+  });
+
+  selectElement.addEventListener('change', presetChanged);
+
   // get container holding information about concentrates
   const concentateContainer = document.querySelector('#wrtConcentrateContainer');
 
